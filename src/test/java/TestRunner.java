@@ -1,11 +1,7 @@
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.TestNGCucumberRunner;
 import cucumber.api.testng.CucumberFeatureWrapper;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
-import webandmobiledriver.DriverManager;
-import webandmobiledriver.DriverManagerFactory;
-import webandmobiledriver.DriverType;
 
 @CucumberOptions(
         features = "src/test/resources/features",
@@ -22,7 +18,7 @@ public class TestRunner {
 
 
     @BeforeClass(alwaysRun = true)
-    public void setUpClass() throws Exception {
+    public void setUpClass() {
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
 
     }
@@ -39,7 +35,7 @@ public class TestRunner {
     }
 
     @AfterClass(alwaysRun = true)
-    public void tearDownClass() throws Exception {
+    public void tearDownClass() {
 
         testNGCucumberRunner.finish();
     }

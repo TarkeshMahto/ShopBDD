@@ -7,6 +7,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
+import pages.HomepagePO;
 import webandmobiledriver.DriverManager;
 import webandmobiledriver.DriverManagerFactory;
 import webandmobiledriver.DriverType;
@@ -24,7 +25,7 @@ public class StepDefinitions {
 
     @Before
     public void initiate() {
-        driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
+        driverManager = DriverManagerFactory.getManager(DriverType.FIREFOX);
         driver = driverManager.getDriver();
     }
 
@@ -35,13 +36,13 @@ public class StepDefinitions {
 
     @Given("^user is in Amazon 'Homepage'\\.$")
     public void user_is_in_amazon_homepage() {
-
         driver.get("https://www.amazon.in");
     }
 
     @When("^user hover over the 'Hello\\.Sign in Your order' label$")
     public void user_hover_over_the_hellosign_in_your_order_label() {
-
+        HomepagePO homepagePO = new HomepagePO();
+        homepagePO.hoverOnHelloSignInLabel(driver);
     }
 
     @Then("^user should be logged in and navigated to Amazon homepage\\.$")
@@ -51,6 +52,7 @@ public class StepDefinitions {
 
     @And("^user sees 'Hello\\.Sign in Your order' label\\.$")
     public void user_sees_hellosign_in_your_order_label() {
+
 
     }
 
