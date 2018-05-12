@@ -18,21 +18,9 @@ import webandmobiledriver.DriverType;
  */
 
 
-public class StepDefinitions {
+public class StepDefinitions extends BaseStepDefinitions{
 
-     private DriverManager driverManager;
-     private WebDriver driver;
 
-    @Before
-    public void initiate() {
-        driverManager = DriverManagerFactory.getManager(DriverType.FIREFOX);
-        driver = driverManager.getDriver();
-    }
-
-    @After
-    public void end() {
-        driverManager.quitDriver();
-    }
 
     @Given("^user is in Amazon 'Homepage'\\.$")
     public void user_is_in_amazon_homepage() {

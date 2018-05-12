@@ -28,3 +28,7 @@ c
 3src/main/java/webandmobiledriver/DriverManager.java,e/9/e982fe2b9e34d0a4e424b781d5c0da927fcfff15
 i
 9src/main/java/webandmobiledriver/ChromeDriverManager.java,a/4/a4654359dc0386eea6b04b77d5ab75c692e9ee85
+N
+.idea/dictionaries/tarkesh.xml,5/5/55b324ae046daef3d27b565440ee7716a2a24ab7
+S
+#src/main/java/pages/HomepagePO.java,d/1/d1ebdddd166a9beac7474ddfe96c687f62549296
