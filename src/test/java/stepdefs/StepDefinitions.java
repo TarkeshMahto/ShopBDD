@@ -8,9 +8,12 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
 import pages.HomepagePO;
+import utilities.Log;
 import webandmobiledriver.DriverManager;
 import webandmobiledriver.DriverManagerFactory;
 import webandmobiledriver.DriverType;
+
+
 
 
 /**
@@ -18,8 +21,23 @@ import webandmobiledriver.DriverType;
  */
 
 
-public class StepDefinitions extends BaseStepDefinitions{
+public class StepDefinitions {
 
+
+    private DriverManager driverManager;
+    WebDriver driver;
+
+    @Before
+    public void initiate() {
+        Log.info("Starting Driver");
+        driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
+        driver = driverManager.getDriver();
+    }
+
+    @After
+    public void end() {
+        driverManager.quitDriver();
+    }
 
 
     @Given("^user is in Amazon 'Homepage'\\.$")
